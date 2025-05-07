@@ -1,0 +1,200 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+.app-container {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.setup-panel {
+    text-align: center;
+    padding: 20px;
+}
+
+.setup-panel h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.reset-btn {
+    background-color: #f44336;
+    margin-top: 20px;
+}
+
+.reset-btn:hover {
+    background-color: #d32f2f;
+}
+
+.simulation-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.simulation-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.building {
+    display: flex;
+    position: relative;
+    min-height: calc(100px * var(--floors));
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.floors-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* Changed from column-reverse */
+}
+
+.floor {
+    border-bottom: 1px solid #ccc;
+    padding: 15px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.floor-label {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.floor-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.floor-button {
+    width: 50px;
+    height: 30px;
+    border-radius: 4px;
+    border: none;
+    background-color: #2196F3;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.floor-button:hover {
+    background-color: #0b7dda;
+}
+
+.floor-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.lifts-container {
+    width: 80px;
+    position: relative;
+}
+
+.lift {
+    position: absolute;
+    width: 60px;
+    height: 80px;
+    background-color: #607D8B;
+    display: flex;
+    transition: bottom 2s linear;
+    left: 10px;
+    bottom: 10px; /* Starting position at floor 0 */
+}
+
+
+.lift-door {
+    flex: 1;
+    height: 100%;
+    background-color: #455A64;
+    transition: width 2.5s ease-in-out;
+}
+
+.lift-door.left {
+    border-right: 1px solid #333;
+}
+
+.lift-door.right {
+    border-left: 1px solid #333;
+}
+
+.lift-door.open {
+    width: 0%;
+}
+
+@media (max-width: 500px) {
+    .app-container {
+        padding: 10px;
+    }
+    
+    .floor {
+        padding: 10px;
+        height: 70px;
+    }
+    
+    .floor-button {
+        width: 45px;
+        height: 25px;
+        font-size: 12px;
+    }
+    
+    .lift {
+        width: 50px;
+        height: 60px;
+    }
+}
